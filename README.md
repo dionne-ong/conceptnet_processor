@@ -9,8 +9,10 @@ The concept_filter_config.py file can be edited to include concept relation, exc
 
 ## Acknowledgements
 
-Includes ConceptNetAPI made by Roscoe Alicbusan.
-Based on filtration method used in ALICE Promoting Collaborative Story Writing with a Virtual Peer.
+Includes ConceptNetAPI made by Roscoe Alicbusan.   
+Based on filtration method used in ALICE Promoting Collaborative Story Writing with a Virtual Peer.  
+
+Moved from the ORSEN Processor data branch.  
 
 Made specifically to work with the following systems:
 * The ORSEN Processor @ https://github.com/dionne-ong/ORSEN_Processor
