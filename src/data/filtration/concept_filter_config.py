@@ -49,7 +49,9 @@ EXCLUDED_WORDS = [
                     "xx",
                     "murder",
                     "suicide",
+                    "suicidal",
                     "homicide",
+                    "homicidal",
                     "poison",
                     "poisons",
                     "big cock",
@@ -62,7 +64,6 @@ EXCLUDED_WORDS = [
                     "harass",
                     "wank off",
                     "jack off",
-                    "suicidal",
                     "shit",
                     "piss",
                     "voyeur",
@@ -105,8 +106,15 @@ EXCLUDE_FULL = [
         "wars",
         "tit",
         "anus",
-        "anuses"
+        "anuses",
 
+]
+
+# exclude articles
+EXCLUDE_ARTICLE = [
+    "a",
+    "an",
+    "the"
 ]
 
 #concepts with <EXCLUDED> as the end node of its AT LOCATION relation will be excluded
@@ -128,11 +136,10 @@ EXCLUDED_CAPABLE_OF = [
     "steal",
     "commit crime",
     "hate",
-    "hurt",
 ]
 
 #concepts with <EXCLUDED> as the end node of its USED FOR relation will be excluded
 
 EXCLUDED_USED_FOR = [
-    "hurt"
+    "kill"
 ]

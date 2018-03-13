@@ -72,3 +72,18 @@ def filter_concept(concept_array, relation):
         concept_array.remove(removed_concept)
 
     return concept_array
+
+
+def filter_all_concept(word):
+    final = []
+
+    for relation in concept_filter_config.INCLUDED_RELATIONS:
+        concept_array_start = conceptnet.query(word, "start", relation, 1.0)
+        concept_array_end   = conceptnet.query(word, "end", relation, 1.0)
+        concept_array = concept_array_end + concept_array_start
+
+        filtered = filter_concept(concept_array, relation)
+
+        final += filtered
+
+    return final
