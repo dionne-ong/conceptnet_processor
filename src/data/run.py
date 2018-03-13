@@ -7,6 +7,16 @@ from src.data.db.concepts.DBO_Concept import DBO_Concept
 from src.data.db.concepts.Concept import Concept
 
 
+def record_capabilities(filename):
+
+    file = open(filename, "r")
+    string = file.read()
+    word_list = re.sub("[^\w]", " ",  string).split()
+
+    for concept in word_list:
+        new_concept = Concept(-1, "character", "CapableOf", concept)
+        DBO_Concept.addConcept(new_concept)
+
 def record_data(filename):
 
     file = open(filename, "r")
@@ -34,9 +44,14 @@ def record_data(filename):
 
 
 
+
 #record_data("stories/advising a fool")
 #record_data("stories/a cartload of almonds")
 #record_data("stories/princess and the pea")
-record_data("stories/basic concepts")
-record_data("stories/steadfast tin soldier")
-record_data("stories/the tinderbox")
+#record_data("stories/basic concepts")
+#record_data("stories/basic verbs")
+#record_capabilities("stories/basic verbs")
+
+
+#record_data("stories/steadfast tin soldier")
+#record_data("stories/the tinderbox")
