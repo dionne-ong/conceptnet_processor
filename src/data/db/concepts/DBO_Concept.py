@@ -158,13 +158,13 @@ class DBO_Concept:
             return False
 
     @staticmethod
-    def does_exist_relation(word, relation):
-        sql = "SELECT * FROM concepts WHERE first = %s OR second = %s AND relation = %s"
+    def does_exist_relation(first, second, relation):
+        sql = "SELECT * FROM concepts WHERE first = %s AND second = %s AND relation = %s"
         conn = SqlConnConcepts.get_connection()
         cursor = conn.cursor()
 
         try:
-            cursor.execute(sql, (word, word, relation,))
+            cursor.execute(sql, (first, second, relation,))
             result = cursor.fetchall()
             ret = False
 
@@ -175,7 +175,7 @@ class DBO_Concept:
             return ret
 
         except:
-            print("Error Concept: unable to check data " + word.__str__())
+            print("Error Concept: unable to check data ", first,second)
             conn.close()
             return False
 
