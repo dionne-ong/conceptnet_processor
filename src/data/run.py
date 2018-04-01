@@ -24,10 +24,10 @@ def record_data(filename):
     word_list = re.sub("[^\w]", " ",  string).split()
     for word in word_list:
 
-        if word not in EXCLUDE_ARTICLE:
+        if word not in EXCLUDE_ARTICLE and not DBO_Concept.does_existn(word):
 
             for relation in INCLUDED_RELATIONS:
-                print(word, relation)
+                #print(word, relation)
                 concept_array_start = query(word, "start", relation, 1.0)
                 concept_array_end   = query(word, "end", relation, 1.0)
                 concept_array = concept_array_end + concept_array_start
@@ -43,6 +43,8 @@ def record_data(filename):
                         DBO_Concept.addConcept(new_concept)
 
             print(word, " done")
+        else:
+            print(word, " exists")
 
     file.close()
 
@@ -65,13 +67,10 @@ def record_word_data(word):
 
 # record_data("stories/basic concepts")
 # record_data("stories/basic verbs")
-#record_capabilities("stories/basic verb capability")
+# record_capabilities("stories/basic verb capability")
 
-
+#record_data("stories/princess and the pea")
 #record_data("stories/advising a fool")
 #record_data("stories/a cartload of almonds")
-#record_data("stories/princess and the pea")
-
-
-#record_data("stories/steadfast tin soldier")
+record_data("stories/steadfast tin soldier")
 #record_data("stories/the tinderbox")

@@ -97,13 +97,14 @@ EXCLUDED_WORDS = [
                 ]
     #only excludes if full word is in the concept || should probably change to regex
 EXCLUDE_FULL = [
+        "tit",
+        "war",
+        "wars",
         "rape",
         "raper",
         "rapist",
         "rapes",
         "raped",
-        "war",
-        "wars",
         "tit",
         "anus",
         "anuses",
